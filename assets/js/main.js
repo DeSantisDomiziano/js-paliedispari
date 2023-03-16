@@ -60,39 +60,53 @@ Pari e Dispari
 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5. Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
 
 ############################################# */
-
-/* for (let i = 0; i < 1; i++) {
+let i = 0
+ while (i < 1) {
     const userEvenOrOdd = prompt('scegli pari o dispari, scrivilo qui sotto')
-    if (userEvenOrOdd.toLowerCase != 'pari' || userEvenOrOdd.toLowerCase != 'dispari') {
+    if (userEvenOrOdd.toLowerCase() != 'pari' && userEvenOrOdd.toLowerCase() != 'dispari') {
         i--
     }
-} */
+    i++
+} 
 
-const userEvenOrOdd = prompt('scegli pari o dispari, scrivilo qui sotto')
-const userNumber = Number(prompt('scegli un numero tra 1 e 5')) 
+i = 0
+while ( i < 1 )  {
+    const userNumber = Number(prompt('scegli un numero tra 1 e 5'))
+    if (isNaN(userNumber)) {
+        i--
+    }
+    i++
+}
+
+ 
 
 function randomNumberPC (min, max) {
-    const numberPC = Math.floor(Math.random() * (max - min + 1) + min)
-    return numberPC
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
+
 
 const numberPC = randomNumberPC (1, 5)
 
 
-function theWinneris () {
+function pariDispari () {
     
     const userSumPC = userNumber + numberPC
     if (userSumPC % 2 == 0) {
-        if (userEvenOrOdd == 'pari') {
-            alert('hai vinto')
-        }
-        alert ('hai perso')
-    } else if ( userSumPC % 2 != 0) {
-        if ( userEvenOrOdd == 'dispari') {
-            alert('hai vinto')
-        }
+       const evenOrOddSum = 'pari' 
+       return evenOrOddSum
+    } else {
+        const evenOrOddSum = 'dispari' 
+       return evenOrOddSum
+    }
+}
+
+function theWinnerIs() {
+    if (userEvenOrOdd == userSumPC) {
+        alert('hai vinto')
+    } else {
         alert('hai perso')
     }
 }
 
-theWinneris()
+theWinnerIs()
