@@ -61,8 +61,9 @@ L’utente sceglie pari o dispari e inserisce un numero da 1 a 5. Generiamo un n
 
 ############################################# */
 let i = 0
+let userEvenOrOdd = '';
  while (i < 1) {
-    const userEvenOrOdd = prompt('scegli pari o dispari, scrivilo qui sotto')
+    userEvenOrOdd = prompt('scegli pari o dispari, scrivilo qui sotto')
     if (userEvenOrOdd.toLowerCase() != 'pari' && userEvenOrOdd.toLowerCase() != 'dispari') {
         i--
     }
@@ -70,12 +71,16 @@ let i = 0
 } 
 
 i = 0
+let userNumber = 0;
 while ( i < 1 )  {
-    const userNumber = Number(prompt('scegli un numero tra 1 e 5'))
+    userNumber = Number(prompt('scegli un numero tra 1 e 5'))
     if (isNaN(userNumber)) {
+        i--
+    } else if ( userNumber < 1 || userNumber > 5 ) {
         i--
     }
     i++
+    
 }
 
  
@@ -88,10 +93,10 @@ function randomNumberPC (min, max) {
 
 const numberPC = randomNumberPC (1, 5)
 
-
+let userSumPC = 0;
 function pariDispari () {
     
-    const userSumPC = userNumber + numberPC
+    userSumPC = userNumber + numberPC
     if (userSumPC % 2 == 0) {
        const evenOrOddSum = 'pari' 
        return evenOrOddSum
