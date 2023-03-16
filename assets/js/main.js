@@ -31,7 +31,7 @@ Ho trovato questa soluzione ma sinceramente non mi piace molto anche se sembra e
 // Soluzione 2, decisamente migliore :)
 function palindrome(enterUserWord) {
 
-    // uso il metodo split per convertire una stringa ad un array di stringhe
+    /* // uso il metodo split per convertire una stringa ad un array di stringhe
     const fromStringToArray = enterUserWord.split('')
     console.log(fromStringToArray)
     // ora metodo reverse per invertire gli indici del mio array
@@ -39,9 +39,12 @@ function palindrome(enterUserWord) {
     console.log(reverseArray)
     // ora per unire tutti gli indici dell'array uso il metodo join
     const joinArray = reverseArray.join('')
-    console.log(joinArray) 
+    console.log(joinArray)  */
 
-    if (joinArray === wordUser) {
+    // salvo tutto in una variabile :)
+    const reversWord = enterUserWord.split('').reverse().join('')
+    console.log(reversWord)
+    if (reversWord === wordUser) {
         alert(`la parola ${wordUser} è palindroma`)
     } else {
         alert(`la parola ${wordUser} non è palindroma`)
